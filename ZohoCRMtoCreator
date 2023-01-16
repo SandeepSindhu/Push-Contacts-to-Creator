@@ -1,0 +1,28 @@
+cRec = zoho.crm.getRecordById("Contacts",contactid);
+// info cRec;
+rec = zoho.crm.getRecords("Contacts");
+contactMap = Map();
+// contactMap.put("Name",map2);
+// contactMap.put("First_Name","Test");
+// contactMap.put("Last_Name","Test Last Name");
+contactMap.put("Email1",cRec.get("Email"));
+nameMap = Map();
+nameMap.put("First_Name",cRec.get("First_Name"));
+nameMap.put("Last_Name",cRec.get("Last_Name"));
+contactMap.put("Name",nameMap);
+contactMap.put("Mobile",cRec.get("Mobile"));
+contactMap.put("cf_crm_contact_id",cRec.get("Contact_CRM_ID"));
+// info contactMap ;
+// contactMap.put("Role",cRec.get("Contact_Profile1"));
+// contactMap.put("Address1",cRec.get("Contact_Address"));
+// contactMap.put("City / District", cRec.get(""))
+info contactMap;
+other_map = Map();
+// zoho.creator.getRecordById(<TEXT>, <TEXT>, <TEXT>, <NUMBER>, <TEXT>);
+// get_creator_record = zoho.creator.getRecordById("aqavictorialtd", "aqa-victoria-portal", "All_Profiles", 207000000218015, "zohocreator");
+// info get_creator_record ;
+// response = zoho.creator.getRecords("Shawn","Task_Management", "All_Tasks", "", 1, 200, "creator_oauth_connection");
+// get_record_by_earch = zoho.creator.getRecords("aqavictorialtd","aqa-victoria-portal","All_Profiles","",1,200,"zohocreator");
+// info get_record_by_earch;
+push_to_portal = zoho.creator.createRecord("aqavictorialtd","aqa-victoria-portal","Create_Profile",contactMap,other_map,"zohocreator");
+info push_to_portal;
